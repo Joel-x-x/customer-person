@@ -36,6 +36,12 @@ dependencies {
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+	testImplementation("org.springframework.boot:spring-boot-starter-test:3.4.3")
+	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
+	implementation("org.springdoc:springdoc-openapi-ui:1.8.0")
+
 }
 
 tasks.withType<Test> {
