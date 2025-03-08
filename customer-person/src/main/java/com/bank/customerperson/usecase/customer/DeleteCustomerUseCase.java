@@ -16,7 +16,7 @@ public class DeleteCustomerUseCase {
     }
 
     public Customer execute(UUID id) throws CustomerNotFoundException {
-        Customer customer = customerGateway.findById(id)
+        Customer customer = this.customerGateway.findById(id)
                 .orElseThrow(CustomerNotFoundException::new);
 
         customer.setDeleted(true);

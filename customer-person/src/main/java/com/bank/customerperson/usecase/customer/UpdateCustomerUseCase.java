@@ -20,27 +20,26 @@ public class UpdateCustomerUseCase {
         Customer customer = this.customerGateway.findById(id)
                 .orElseThrow(CustomerNotFoundException::new);
 
-        if(dados.name() != null && !dados.name().isBlank()) {
+        if(!dados.name().isBlank())
             customer.setName(dados.name());
-        }
-        if(dados.genre() != null && !dados.genre().isBlank()) {
+
+        if(!dados.genre().isBlank())
             customer.setGenre(Genre.valueOf(dados.genre()));
-        }
-        if(dados.birthDate() != null && !dados.birthDate().isBlank()) {
+
+        if(!dados.birthDate().isBlank())
             customer.setBirthDate(LocalDate.parse(dados.birthDate()));
-        }
-        if(dados.identification() != null && !dados.identification().isBlank()) {
+
+        if(!dados.identification().isBlank())
             customer.setIdentification(dados.identification());
-        }
-        if(dados.address() != null && !dados.address().isBlank()) {
+
+        if(!dados.address().isBlank())
             customer.setAddress(dados.address());
-        }
-        if(dados.phone() != null && !dados.phone().isBlank()) {
+
+        if(!dados.phone().isBlank())
             customer.setPhone(dados.phone());
-        }
-        if(dados.password() != null && !dados.password().isBlank()) {
+
+        if(!dados.password().isBlank())
             customer.setPassword(dados.password());
-        }
 
         return this.customerGateway.update(customer);
     }
