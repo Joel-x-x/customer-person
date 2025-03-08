@@ -5,7 +5,7 @@ import com.bank.customerperson.entity.customer.model.Customer;
 import com.bank.customerperson.infrastructure.config.db.schema.Genre;
 import com.bank.customerperson.usecase.customer.dto.ICustomerRegistrationData;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class CreateCustomerUseCase {
     private final CustomerGateway customerGateway;
@@ -18,7 +18,7 @@ public class CreateCustomerUseCase {
         Customer customer = Customer.builder()
                 .name(dados.name())
                 .genre(Genre.valueOf(dados.genre()))
-                .birthDate(LocalDateTime.parse(dados.birthDate()))
+                .birthDate(LocalDate.parse(dados.birthDate()))
                 .identification(dados.identification())
                 .address(dados.address())
                 .phone(dados.phone())

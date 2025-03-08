@@ -6,6 +6,7 @@ import com.bank.customerperson.entity.customer.model.Customer;
 import com.bank.customerperson.infrastructure.config.db.schema.Genre;
 import com.bank.customerperson.usecase.customer.dto.ICustomerUpdateData;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -27,7 +28,7 @@ public class UpdateCustomerUseCase {
             customer.setGenre(Genre.valueOf(dados.genre()));
         }
         if(dados.birthDate() != null && !dados.birthDate().isBlank()) {
-            customer.setBirthDate(LocalDateTime.parse(dados.birthDate()));
+            customer.setBirthDate(LocalDate.parse(dados.birthDate()));
         }
         if(dados.identification() != null && !dados.identification().isBlank()) {
             customer.setIdentification(dados.identification());

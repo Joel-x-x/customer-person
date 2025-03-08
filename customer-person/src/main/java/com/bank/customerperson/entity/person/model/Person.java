@@ -5,7 +5,7 @@ import com.bank.customerperson.infrastructure.config.db.schema.Genre;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Getter
@@ -19,7 +19,7 @@ public abstract class Person extends AbstractEntity<UUID> {
 
     private String name;
     private Genre genre;
-    private LocalDateTime birthDate;
+    private LocalDate birthDate;
     private String identification;
     private String address;
     private String phone;

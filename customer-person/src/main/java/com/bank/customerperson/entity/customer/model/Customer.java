@@ -5,6 +5,8 @@ import com.bank.customerperson.infrastructure.config.db.schema.PersonSchema;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @ToString(callSuper = true)

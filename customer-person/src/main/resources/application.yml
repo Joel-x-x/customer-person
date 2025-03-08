@@ -21,7 +21,11 @@ spring:
 
 # Swagger
 springdoc:
+  api-docs:
+    enabled: true
   swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
     operations-sorter: alpha
     tags-sorter: alpha
     filter: true
@@ -40,3 +44,7 @@ logging:
       springframework:
         security: DEBUG
         web: DEBUG
+
+# API
+api:
+  prefix: /api/v1
