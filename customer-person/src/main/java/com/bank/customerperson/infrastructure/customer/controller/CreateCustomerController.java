@@ -4,16 +4,13 @@ import com.bank.customerperson.infrastructure.customer.dto.CustomerPublicData;
 import com.bank.customerperson.infrastructure.customer.dto.CustomerRegistrationData;
 import com.bank.customerperson.usecase.customer.CreateCustomerUseCase;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
-import lombok.Value;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -27,11 +24,10 @@ public class CreateCustomerController {
         this.createCustomerUseCase = createCustomerUseCase;
     }
 
-
     @Operation(
             summary = "Crear un nuevo cliente",
             description = "Crea un nuevo cliente en el sistema y devuelve los detalles públicos del cliente recién creado.",
-            tags = {"Cliente"})
+            tags = {"Clientes"})
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "201",
@@ -39,7 +35,7 @@ public class CreateCustomerController {
                     content = @Content(
                             mediaType = "application/json",
                             schema = @Schema(implementation = CustomerPublicData.class),
-                            examples = @ExampleObject(value = "{ \"id\": \"123e4567-e89b-12d3-a456-426614174000\", \"name\": \"Juan Pérez\", \"genre\": \"MASCULINO\", \"birthDate\": \"1990-05-15\", \"identification\": \"1234567890\", \"address\": \"Calle Falsa 123\", \"phone\": \"0987654321\" }")
+                            examples = @ExampleObject(value = "{ \"id\": \"123e4567-e89b-12d3-a456-426614174000\", \"name\": \"Juan Pérez\", \"genre\": \"M\", \"birthDate\": \"1990-05-15\", \"identification\": \"1234567890\", \"address\": \"Calle Falsa 123\", \"phone\": \"0987654321\" }")
                     )
             ),
             @ApiResponse(

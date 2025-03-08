@@ -7,7 +7,6 @@ import com.bank.customerperson.infrastructure.config.db.schema.Genre;
 import com.bank.customerperson.usecase.customer.dto.ICustomerUpdateData;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class UpdateCustomerUseCase {

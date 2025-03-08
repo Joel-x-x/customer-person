@@ -5,10 +5,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.SqlTypes;
-
-import java.util.UUID;
 
 @Entity
 @Table(name = "customers")
@@ -33,6 +29,10 @@ public class CustomerSchema extends PersonSchema {
         this.setAddress(customer.getAddress());
         this.setPhone(customer.getPhone());
         this.setPassword(customer.getPassword());
+        this.setCreatedAt(customer.getCreatedAt());
+        this.setUpdatedAt(customer.getUpdatedAt());
+        this.setDeletedAt(customer.getDeletedAt());
+        this.setDeleted(customer.isDeleted());
     }
 
     public Customer toCustomer() {
@@ -45,6 +45,10 @@ public class CustomerSchema extends PersonSchema {
                 .address(this.getAddress())
                 .phone(this.getPhone())
                 .password(this.getPassword())
+                .createdAt(this.getCreatedAt())
+                .updatedAt(this.getUpdatedAt())
+                .deletedAt(this.getDeletedAt())
+                .deleted(this.isDeleted())
                 .build();
     }
 }
