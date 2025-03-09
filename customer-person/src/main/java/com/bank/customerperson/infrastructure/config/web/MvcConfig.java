@@ -3,13 +3,14 @@ package com.bank.customerperson.infrastructure.config.web;
 import com.bank.customerperson.entity.customer.gateway.CustomerGateway;
 import com.bank.customerperson.infrastructure.config.db.repository.CustomerRepository;
 import com.bank.customerperson.infrastructure.customer.gateway.CustomerDatabaseGateway;
+import com.bank.customerperson.infrastructure.kafka.customer.ReportRequestConsumer;
 import com.bank.customerperson.usecase.customer.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.KafkaTemplate;
 
 @Configuration
 public class MvcConfig {
-
     // Customer
     @Bean
     public CreateCustomerUseCase createCustomerUseCase(CustomerRepository customerRepository) {
